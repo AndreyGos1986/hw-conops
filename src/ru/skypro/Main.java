@@ -7,10 +7,8 @@ public class Main {
         System.out.println("TASK 1");
 
 
-        int clientOs = 0;
-        int clientIOs = 0;
-        int clientAndroid = 1;
-        ;
+        int clientOs = 1;
+
         String clientForIOs = "Установите версию приложения для iOS по ссылке";
         String clientForAndroid = "Установите версию приложения для Android по ссылке";
         if (clientOs == 0) {
@@ -24,7 +22,7 @@ public class Main {
 
 
         int YearOfProd = 2015;
-        int teLYearOfProd = 2014;
+        int teLYearOfProd = 2012;
         String msgToLiteVer = "для скачивания облегченной версии";
 
         if (teLYearOfProd <= YearOfProd && clientOs == 0) {
@@ -32,6 +30,10 @@ public class Main {
 
         } else if (teLYearOfProd <= YearOfProd && clientOs == 1) {
             System.out.println(clientForAndroid + " " + msgToLiteVer);
+        }else if (teLYearOfProd>=YearOfProd && clientOs == 0){
+            System.out.println(clientForIOs);
+        }else if (teLYearOfProd>=YearOfProd && clientOs == 1){
+            System.out.println(clientForAndroid);
         }
 
         System.out.println();
@@ -44,14 +46,16 @@ public class Main {
             if ((year % 100 != 0) || (year % 400 == 0)) {
                 System.out.println("Год является високосным");
             }
-        } else System.out.println ("Год не является високосным");
+        } else {
+            System.out.println("Год не является високосным");
+        }
 
 
         System.out.println();
         System.out.println("TASK 4");
 
 
-        int deliveryDistance = 57;
+        int deliveryDistance = 95;
         int deliveryTime;
 
         String msg = "На доставку потребуется: ";
@@ -65,7 +69,7 @@ public class Main {
             System.out.println(msg+deliveryTime+oneDay);
         } else
         if ((deliveryDistance>20)&& (deliveryDistance<=60)) {
-            deliveryTime = 2;
+            deliveryTime =2;
             System.out.println(msg+deliveryTime+moreDays);
         } else
         if ((deliveryDistance>60)&& (deliveryDistance<=100)) {
@@ -85,6 +89,9 @@ public class Main {
         String mistakeMsg  = "Указанного месяца не существует, попробуйте ввести другой.";
         int monthNumber=15;
         switch (monthNumber) {
+            case 12:
+                System.out.println(winter);
+                break;
             case 1:
                 System.out.println(winter);
                 break;
@@ -118,10 +125,7 @@ public class Main {
             case 11:
                 System.out.println(autumn);
                 break;
-            case 12:
-                System.out.println(winter);
-                break;
-            default: System.out.println(mistakeMsg);
+                default: System.out.println(mistakeMsg);
         }
     }
 }
